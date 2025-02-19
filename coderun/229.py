@@ -32,14 +32,14 @@ def main():
         const_b[idx] = int(char_b[idx])
     m = int(input())
     res = [0 for _ in range(m)]
-    sertificats = [[x for x in input().split()] for _ in range(m)]
+    certificates = [[x for x in input().split()] for _ in range(m)]
 
     for j in range(m):
-        string = sertificats[j]
+        string = certificates[j]
         index, tip, d = string
         if j >= 2:
-            if sertificats[j - 2][1] == "1":
-                a = back_old_value(a, sertificats[j - 2][0], const_a)
+            if certificates[j - 2][1] == "1":
+                a = back_old_value(a, certificates[j - 2][0], const_a)
                 if tip == "1":
                     a = update_lst(a, index, d)
                     res[j] = sum_two_arrays(a, b, n)
@@ -47,7 +47,7 @@ def main():
                     b = update_lst(b, index, d)
                     res[j] = sum_two_arrays(a, b, n)
             else:
-                b = back_old_value(b, sertificats[j - 2][0], const_b)
+                b = back_old_value(b, certificates[j - 2][0], const_b)
                 if tip == "1":
                     a = update_lst(a, index, d)
                     res[j] = sum_two_arrays(a, b, n)
