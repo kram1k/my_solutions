@@ -15,4 +15,5 @@ def reverseVowels(s: str):
             res += s[i]
     return res
 
+
 print(reverseVowels("IceCreAm"))
